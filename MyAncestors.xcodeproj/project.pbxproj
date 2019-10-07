@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E80A67F323455522003D6FBA /* AncestorDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80A67F223455522003D6FBA /* AncestorDetailView.swift */; };
+		E80A67F5234631D0003D6FBA /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80A67F4234631D0003D6FBA /* ImagePickerView.swift */; };
+		E85E21D02347A709005EB6E4 /* AncestorListHostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85E21CF2347A709005EB6E4 /* AncestorListHostingController.swift */; };
+		E85E21F22348DB13005EB6E4 /* WatchMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85E21F12348DB13005EB6E4 /* WatchMapView.swift */; };
 		E870F8AC234519FB001F9528 /* MyAncestors WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = E870F8AB234519FB001F9528 /* MyAncestors WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		E870F8B2234519FB001F9528 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E870F8B0234519FB001F9528 /* Interface.storyboard */; };
 		E870F8B4234519FD001F9528 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E870F8B3234519FD001F9528 /* Assets.xcassets */; };
@@ -16,6 +20,8 @@
 		E870F8C4234519FD001F9528 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E870F8C3234519FD001F9528 /* ExtensionDelegate.swift */; };
 		E870F8C6234519FD001F9528 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E870F8C5234519FD001F9528 /* Assets.xcassets */; };
 		E870F8C9234519FD001F9528 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E870F8C8234519FD001F9528 /* Preview Assets.xcassets */; };
+		E870F8DC2345282D001F9528 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = E870F8DB2345282D001F9528 /* Data.swift */; };
+		E870F8DE234528F4001F9528 /* AncestorListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E870F8DD234528F4001F9528 /* AncestorListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +67,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		E80A67F223455522003D6FBA /* AncestorDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AncestorDetailView.swift; sourceTree = "<group>"; };
+		E80A67F4234631D0003D6FBA /* ImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
+		E85E21CF2347A709005EB6E4 /* AncestorListHostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AncestorListHostingController.swift; sourceTree = "<group>"; };
+		E85E21F12348DB13005EB6E4 /* WatchMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchMapView.swift; sourceTree = "<group>"; };
 		E870F8A7234519FB001F9528 /* MyAncestors.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyAncestors.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E870F8AB234519FB001F9528 /* MyAncestors WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MyAncestors WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E870F8B1234519FB001F9528 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
@@ -73,6 +83,8 @@
 		E870F8C5234519FD001F9528 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E870F8C8234519FD001F9528 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E870F8CA234519FD001F9528 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E870F8DB2345282D001F9528 /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		E870F8DD234528F4001F9528 /* AncestorListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AncestorListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +130,9 @@
 		E870F8BE234519FD001F9528 /* MyAncestors WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
+				E870F8DA23452803001F9528 /* Controllers */,
+				E870F8D9234527F8001F9528 /* Views */,
+				E870F8D8234527EF001F9528 /* Model */,
 				E870F8BF234519FD001F9528 /* ContentView.swift */,
 				E870F8C1234519FD001F9528 /* HostingController.swift */,
 				E870F8C3234519FD001F9528 /* ExtensionDelegate.swift */,
@@ -134,6 +149,33 @@
 				E870F8C8234519FD001F9528 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		E870F8D8234527EF001F9528 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E870F8DB2345282D001F9528 /* Data.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E870F8D9234527F8001F9528 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E870F8DD234528F4001F9528 /* AncestorListView.swift */,
+				E80A67F223455522003D6FBA /* AncestorDetailView.swift */,
+				E80A67F4234631D0003D6FBA /* ImagePickerView.swift */,
+				E85E21F12348DB13005EB6E4 /* WatchMapView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E870F8DA23452803001F9528 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E85E21CF2347A709005EB6E4 /* AncestorListHostingController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -265,8 +307,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				E870F8C2234519FD001F9528 /* HostingController.swift in Sources */,
+				E85E21D02347A709005EB6E4 /* AncestorListHostingController.swift in Sources */,
+				E85E21F22348DB13005EB6E4 /* WatchMapView.swift in Sources */,
 				E870F8C0234519FD001F9528 /* ContentView.swift in Sources */,
+				E80A67F323455522003D6FBA /* AncestorDetailView.swift in Sources */,
+				E870F8DE234528F4001F9528 /* AncestorListView.swift in Sources */,
+				E80A67F5234631D0003D6FBA /* ImagePickerView.swift in Sources */,
 				E870F8C4234519FD001F9528 /* ExtensionDelegate.swift in Sources */,
+				E870F8DC2345282D001F9528 /* Data.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

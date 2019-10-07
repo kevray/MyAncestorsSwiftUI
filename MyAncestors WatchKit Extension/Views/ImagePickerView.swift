@@ -9,13 +9,28 @@
 import SwiftUI
 
 struct ImagePickerView: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello World!"/*@END_MENU_TOKEN@*/)
+  @Binding var selectedImageName: String
+  @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+  
+  var body: some View {
+    
+    List(0 ..< 3) { i in
+      ForEach(1..<4){ j in
+        Image(self.imageName(row:j, column: i)).resizable().frame(width: 50, height:50).onTapGesture {
+          self.selectedImageName = self.imageName(row:j, column: i)
+          self.presentationMode.wrappedValue.dismiss()
+        }
+      }
     }
+  }
+  
+  func imageName(row: Int, column: Int) -> String {
+    return "thumb\(column * 3 + row)"
+  }
 }
 
 struct ImagePickerView_Previews: PreviewProvider {
-    static var previews: some View {
-        ImagePickerView()
-    }
+  static var previews: some View {
+    ImagePickerView(selectedImageName: .constant(""))
+  }
 }

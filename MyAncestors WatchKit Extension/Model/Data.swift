@@ -32,7 +32,7 @@ struct Person: Identifiable {
   let name: String
   let events: [Event]
   let gender: Gender
-  let imageName: String
+  var imageName: String
 }
 struct Event: Identifiable {
   let id = UUID().uuidString

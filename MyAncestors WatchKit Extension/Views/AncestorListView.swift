@@ -7,15 +7,22 @@
 //
 
 import SwiftUI
+import Combine
 
 struct AncestorListView: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello World!"/*@END_MENU_TOKEN@*/)
+  @State var ancestorData: AncestorData = AncestorData()
+  var body: some View {
+    List(0..<ancestorData.ancestors.count) { index in
+      NavigationLink(destination: AncestorDetailView(ancestor: self.$ancestorData.ancestors[index])) {
+          Text(self.ancestorData.ancestors[index].name)
+      }
     }
+  }
 }
 
 struct AncestorListView_Previews: PreviewProvider {
-    static var previews: some View {
-        AncestorListView()
-    }
+  static var previews: some View {
+    AncestorListView()
+  }
 }
+
