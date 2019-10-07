@@ -48,7 +48,7 @@ struct HeaderView: View {
           self.presentImagePicker.toggle()
       }
       
-      Text(ancestor.name + " ")
+      Text(ancestor.name)
         .font(.system(size:20))
         .fontWeight(.bold)
         .multilineTextAlignment(.center)
