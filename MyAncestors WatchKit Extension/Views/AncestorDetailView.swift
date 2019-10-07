@@ -2,22 +2,20 @@
 //  AncestorDetailView.swift
 //  MyAncestors WatchKit Extension
 //
-//  Created by Kevin Ray on 10/2/19.
+//  Created by Kevin Ray on 10/7/19.
 //  Copyright © 2019 Booyabuddy. All rights reserved.
 //
 
 import SwiftUI
 
 struct AncestorDetailView: View {
-  @Binding var ancestor: Person
-  
+  let ancestor: Ancestor
   var body: some View {
     List {
-      Header(ancestor: $ancestor).listRowBackground(EmptyView())
+      HeaderView(ancestor: ancestor)
+      
       ForEach(ancestor.events) { event in
-        NavigationLink(destination: WatchMapView(locationCoordinate: event.placeCoordinate)) {
-          EventCellView(event: event)
-        }
+        EventCellView(event: event)
       }
     }
   }
@@ -26,44 +24,54 @@ struct AncestorDetailView: View {
 struct AncestorDetailView_Previews: PreviewProvider {
   static var previews: some View {
     Group {
-      AncestorDetailView(ancestor: .constant(myAncestors[0]) )
-      AncestorDetailView(ancestor: .constant(myAncestors[1]) )
-        .previewDevice(PreviewDevice(rawValue: "Apple Watch Series 5 - 40mm"))
+      AncestorDetailView(ancestor: myAncestors[0])
+      AncestorDetailView(ancestor: myAncestors[2])
+      .previewDevice(PreviewDevice(rawValue: "Apple Watch Series 5 - 40mm"))
     }
   }
 }
 
-struct Header: View {
-  @Binding var ancestor: Person
-  @State var presentImagePicker = false
+// MARK: - HeaderView
+struct HeaderView: View {
+  
+  @State private var presentImagePicker: Bool = false
+  @State var ancestor: Ancestor
   
   var body: some View {
-    VStack {
-    Image(ancestor.imageName)
-      .resizable()
-      .frame(width: 100.0, height: 100)
-      .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
-      .overlay(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/.stroke(lineWidth: 2))
-      .onTapGesture {
-        self.presentImagePicker = true
+    VStack(alignment: .center) {
+      Image(ancestor.imageName)
+        .resizable()
+        .frame(width: 120, height: 120)
+        .clipShape(Circle())
+        .overlay(Circle().stroke(lineWidth: 2))
+        .onTapGesture {
+          self.presentImagePicker.toggle()
       }
-
-      Text(ancestor.name)
-        .font(.headline)
-    }
-    .frame(maxWidth: .infinity, alignment: .center)
+      
+      Text(ancestor.name + " ")
+        .font(.system(size:20))
+        .fontWeight(.bold)
+        .multilineTextAlignment(.center)
+      
+      }
+    .frame(minWidth: 0, maxWidth: .infinity)
+    .padding()
+    .listRowBackground(EmptyView())
     .sheet(isPresented: $presentImagePicker) {
       ImagePickerView(selectedImageName: self.$ancestor.imageName)
     }
   }
 }
 
+// MARK: - EventCellView
 struct EventCellView: View {
   let event: Event
   var body: some View {
-    VStack(alignment: .leading) {
-      Text(event.date)
-      Text(event.placeName)
-    }.padding()
+    Section(header: Text(event.eventType == .birth ? "Birth" : "Death")) {
+      VStack(alignment:.leading) {
+        Text(event.placeName)
+        Text(event.date)
+      }
+    }
   }
 }

@@ -16,7 +16,8 @@ struct ImagePickerView: View {
     
     List(0 ..< 3) { i in
       ForEach(1..<4){ j in
-        Image(self.imageName(row:j, column: i)).resizable().frame(width: 50, height:50).onTapGesture {
+        Image(self.imageName(row:j, column: i)).resizable().frame(width: 50, height:50)
+          .onTapGesture {
           self.selectedImageName = self.imageName(row:j, column: i)
           self.presentationMode.wrappedValue.dismiss()
         }
