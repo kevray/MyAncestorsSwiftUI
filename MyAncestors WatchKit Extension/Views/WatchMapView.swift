@@ -19,8 +19,8 @@ struct WatchMapView: WKInterfaceObjectRepresentable {
 
     func updateWKInterfaceObject(_ map: WKInterfaceMap, context: WKInterfaceObjectRepresentableContext<WatchMapView>) {
         // Update the interface object.
-        let span = MKCoordinateSpan(latitudeDelta: 0.02,
-                                    longitudeDelta: 0.02)
+        let span = MKCoordinateSpan(latitudeDelta: 0.2,
+                                    longitudeDelta: 0.2)
 
         let region = MKCoordinateRegion(
             center: locationCoordinate,

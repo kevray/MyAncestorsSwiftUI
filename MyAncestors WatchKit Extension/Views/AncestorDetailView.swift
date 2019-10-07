@@ -68,9 +68,11 @@ struct EventCellView: View {
   let event: Event
   var body: some View {
     Section(header: Text(event.eventType == .birth ? "Birth" : "Death")) {
-      VStack(alignment:.leading) {
-        Text(event.placeName)
-        Text(event.date)
+      NavigationLink(destination: WatchMapView(locationCoordinate: event.placeCoordinate)) {
+        VStack(alignment:.leading) {
+          Text(event.placeName)
+          Text(event.date)
+        }
       }
     }
   }
